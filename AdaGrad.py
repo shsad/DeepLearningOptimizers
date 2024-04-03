@@ -29,14 +29,11 @@ class MyAdaGrad:
                 # NOTE: The key of the dictionary is the parameter itself
                 self.g_squared[param] = torch.zeros_like(param.data)
 
-            ##### YOUR CODE HERE #####
             # 1. Update squared gradient memory
             self.g_squared[param] += param.grad.data ** 2
 
             # 2. Update parameter values
             param.data -= self.lr * param.grad.data / (torch.sqrt(self.g_squared[param]) + self.eps)
-
-            ##### YOUR CODE ENDS HERE #####
 
 
 # Set hyperparameters

@@ -24,7 +24,6 @@ class MyNesterovMomentumSGD:
             if param.grad is None:
                 continue
 
-            ##### YOUR CODE HERE #####
             # 1. Compute the velocity update
             self.velocity[i] = self.momentum * self.velocity[i] + param.grad
 
@@ -33,7 +32,6 @@ class MyNesterovMomentumSGD:
 
             # 3. Update the parameters
             param.data.add_(corrected_gradient, alpha=-self.lr)
-            ##### YOUR CODE ENDS HERE #####
 
 
 # Set hyperparameters

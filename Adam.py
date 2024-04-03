@@ -39,17 +39,14 @@ class MyAdam:
             # To update or access the first and second moment vectors, use self.m[p] and self.v[p] respectively
 
             # Update biased first and second moment estimates
-            ##### YOUR CODE HERE #####
             self.m[p] = self.beta1 * self.m[p] + (1 - self.beta1) * p.grad.data
             self.v[p] = self.beta2 * self.v[p] + (1 - self.beta2) * p.grad.data ** 2
 
             # Compute bias-corrected first and second moment estimates
-            ##### YOUR CODE HERE #####
             m_hat = self.m[p] / (1 - self.beta1 ** self.t)
             v_hat = self.v[p] / (1 - self.beta2 ** self.t)
 
             # Update the parameter
-            ##### YOUR CODE HERE #####
             p.data -= self.lr * m_hat / (torch.sqrt(v_hat) + self.epsilon)
 
 

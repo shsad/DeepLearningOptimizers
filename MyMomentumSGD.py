@@ -24,12 +24,10 @@ class MyMomentumSGD:
             if param.grad is None:
                 continue
 
-            ##### YOUR CODE HERE #####
             # 1. Compute the velocity update
             self.velocity[i] = self.momentum * self.velocity[i] + self.lr * param.grad
             # 2. Update the parameters
             param.data -= self.velocity[i]
-            ##### YOUR CODE ENDS HERE #####
 
 
 # Train our model with our new optimizer and compare results with MySGD
