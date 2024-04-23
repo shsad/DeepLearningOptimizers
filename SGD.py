@@ -1,6 +1,6 @@
 import torch
 from utils import SimpleNN, train_model
-from main import train_loader, val_loader
+from dataload import train_loader, val_loader
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 from utils import criterion, evaluate_model
 
